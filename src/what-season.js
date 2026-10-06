@@ -18,13 +18,13 @@ function getSeason(date) {
 
   if (
     !(date instanceof Date) ||
-    Object.prototype.toString.call(date) !== "[object Date]" ||
-    isNaN(date.getTime())
+    Object.prototype.toString.call(date) !== "[object Date]"
   ) {
     throw new Error("Invalid date!");
   }
 
   try {
+    date.getTime();
     date.getMonth();
   } catch (e) {
     throw new Error("Invalid date!");
